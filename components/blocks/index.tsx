@@ -1,5 +1,5 @@
 import { tinaField } from "tinacms/dist/react";
-import { Page, PageBlocks } from "../../tina/__generated__/types";
+import { Page } from "../../tina/__generated__/types";
 import { Hero } from "./hero";
 import { Content } from "./content";
 import { Features } from "./features";
@@ -8,8 +8,13 @@ import { Video } from "./video";
 import { Callout } from "./callout";
 import { Stats } from "./stats";
 import { CallToAction } from "./call-to-action";
+import { Home } from "./home";
+import { Team } from "./team";
+import { Services } from "./services";
+import { Reference } from "./reference";
+import { Contact } from "./contact";
 
-export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
+export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values"> & { blocks?: any[] }) => {
   if (!props.blocks) return null;
   return (
     <>
@@ -24,8 +29,18 @@ export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {
   );
 };
 
-const Block = (block: PageBlocks) => {
+const Block = (block: any) => {
   switch (block.__typename) {
+    case "PageBlocksHome":
+      return <Home data={block} />;
+    case "PageBlocksTeam":
+      return <Team data={block} />;
+    case "PageBlocksServices":
+      return <Services data={block} />;
+    case "PageBlocksReference":
+      return <Reference data={block} />;
+    case "PageBlocksContact":
+      return <Contact data={block} />;
     case "PageBlocksVideo":
       return <Video data={block} />;
     case "PageBlocksHero":

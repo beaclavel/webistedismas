@@ -7,6 +7,11 @@ import { videoBlockSchema } from '@/components/blocks/video';
 import { calloutBlockSchema } from '@/components/blocks/callout';
 import { statsBlockSchema } from '@/components/blocks/stats';
 import { ctaBlockSchema } from '@/components/blocks/call-to-action';
+import { homeBlockSchema } from '@/components/blocks/home';
+import { teamBlockSchema } from '@/components/blocks/team';
+import { servicesBlockSchema } from '@/components/blocks/services';
+import { referenceBlockSchema } from '@/components/blocks/reference';
+import { contactBlockSchema } from '@/components/blocks/contact';
 
 const Page: Collection = {
   label: 'Pages',
@@ -32,6 +37,11 @@ const Page: Collection = {
         visualSelector: true,
       },
       templates: [
+        homeBlockSchema,
+        teamBlockSchema,
+        servicesBlockSchema,
+        referenceBlockSchema,
+        contactBlockSchema,
         heroBlockSchema,
         calloutBlockSchema,
         featureBlockSchema,
