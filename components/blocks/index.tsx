@@ -14,7 +14,7 @@ import { Services } from "./services";
 import { Reference } from "./reference";
 import { Contact } from "./contact";
 
-export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values"> & { blocks?: any[] }) => {
+export const Blocks = (props: Partial<Omit<Page, "id" | "_sys" | "_values">> & { blocks?: any[] | null }) => {
   if (!props.blocks) return null;
   return (
     <>
