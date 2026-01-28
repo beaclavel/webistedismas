@@ -9,7 +9,8 @@
     "start": "tinacms build && next start",
     "export": "npm run build && next export",
     "lint": "biome lint",
-    "dev:build": "next build"
+    "dev:build": "next build",
+    "deploy": "curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_caPAgMoU192yGj8bOyYGeKGwgbxk/H017RvzeLk"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
@@ -37,7 +38,7 @@
     "lucide-react": "^0.484.0",
     "mermaid": "^11.12.0",
     "motion": "^12.23.24",
-    "next": "15.3.0",
+    "next": "15.3.6",
     "next-themes": "^0.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
